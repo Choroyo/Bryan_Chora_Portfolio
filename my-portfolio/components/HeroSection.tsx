@@ -81,15 +81,15 @@ const HeroSection = () => {
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-slate-900 transition hover:accent"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-slate-900 transition hover:text-white hover:opacity-80"
           >
             View Projects
           </a>
           <a
-            href="https://drive.google.com/file/d/1vs_I7zWrNRrxrP00sxtL5dQcMzOJFXe-/view?usp=sharing"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 font-medium text-slate-200 transition hover:border-accent hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border bg-blue_navy border-slate-700 px-6 py-3 font-medium text-slate-200 transition hover:border-accent hover:text-white"
           >
             Download Resume
           </a>
@@ -100,18 +100,15 @@ const HeroSection = () => {
         initial={{ opacity: 0, scale: 0.9, y: 24 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 0.4, type: "spring" }}
-        className="relative mx-auto w-64 max-w-sm rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 text-center shadow-[0_20px_120px_rgba(99,102,241,0.2)] md:w-72"
+        className="relative mx-auto max-w-sm rounded-3xl border border-slate-700 bg-blue_navy p-4 text-center shadow-[0_20px_120px_rgba(99,102,241,0.2)] md:w-72"
       >
-        <div className="absolute -left-9 top-5 hidden rotate-90 text-xs uppercase tracking-[0.5em] text-slate-500 md:block">
-          Resilience
-        </div>
-        <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-2xl border border-slate-800">
+        <div className="relative mx-auto  h-80 w-full max-w-sm overflow-hidden rounded-2xl border border-slate-700">
           <Image
             src="/images/pro_picture.jpg"
             alt="Bryan Chora portrait"
             fill
             className="object-cover"
-            sizes="200px"
+            sizes="(min-width: 768px) 320px, 100vw"
             priority
           />
         </div>
@@ -124,17 +121,25 @@ const HeroSection = () => {
         </p>
         <motion.a
           href="#contact"
-          whileHover={{ y: -2, scale: 1.02 }}
+          whileHover={{ y: -2, scale: 1.06 }}
           whileTap={{ scale: 0.97 }}
           animate={{
             boxShadow: [
               "0 0 0 rgba(0,0,0,0)",
-              "0 0 30px rgba(197,154,44,0.45)",
+              "0 0 20px rgba(241,90,34,.20)",
+              "0 0 40px rgba(241,90,34,.45)",
+              "0 0 60px rgba(241,90,34, .80)",
+              "0 0 40px rgba(241,90,34,.45)",
+              "0 0 20px rgba(241,90,34,.20)",
               "0 0 0 rgba(0,0,0,0)",
             ],
           }}
-          transition={{ repeat: Infinity, duration: 3 }}
-          className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-accent px-4 py-2 font-semibold text-slate-900 transition hover:bg-accent-2"
+          transition={{ 
+            repeat: Infinity,
+            duration: 3,
+            ease: "easeOut",
+            repeatType: "mirror"}}
+          className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-accent px-4 py-2 font-semibold text-slate-900 hover:transition hover:bg-accent-2"
         >
           Contact Me
         </motion.a>

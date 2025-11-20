@@ -19,9 +19,9 @@ const ProjectCard = ({ project, priority }: ProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.3 }}
-      className="group flex flex-col rounded-3xl border border-slate-800/70 bg-slate-900/40 p-6 backdrop-blur"
+      className="group flex flex-col rounded-3xl border border-slate-700 bg-blue_navy p-6 backdrop-blur"
     >
-      <div className="relative mb-4 h-64 overflow-hidden rounded-2xl border border-slate-800/80">
+      <div className="relative mb-4 h-64 overflow-hidden rounded-2xl border border-slate-700">
         <Image
           src={project.image}
           alt={project.title}
@@ -41,7 +41,7 @@ const ProjectCard = ({ project, priority }: ProjectCardProps) => {
         {project.technologies.map((tech) => (
           <li
             key={tech}
-            className="rounded-full border border-slate-800/70 px-3 py-1"
+            className="rounded-full border border-slate-700 px-3 py-1"
           >
             {tech}
           </li>
@@ -50,7 +50,7 @@ const ProjectCard = ({ project, priority }: ProjectCardProps) => {
       <div className="mt-6 flex flex-wrap gap-3 text-sm font-medium">
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-slate-900 transition hover:bg-accent-2"
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-slate-900 transition hover:text-white hover:opacity-80 border border-slate-700"
         >
           Project Details
           <RiExternalLinkLine />
@@ -60,7 +60,7 @@ const ProjectCard = ({ project, priority }: ProjectCardProps) => {
             href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-800/70 px-4 py-2 text-slate-200 transition hover:border-accent hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-slate-200 transition hover:border-accent hover:text-white"
           >
             <FaGithub />
             Source
@@ -71,7 +71,7 @@ const ProjectCard = ({ project, priority }: ProjectCardProps) => {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-800/70 px-4 py-2 text-slate-200 transition hover:border-accent hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-slate-200 transition hover:border-accent hover:text-white"
           >
             <RiExternalLinkLine />
             Live Demo

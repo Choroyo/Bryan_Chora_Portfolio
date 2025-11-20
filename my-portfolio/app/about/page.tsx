@@ -76,10 +76,10 @@ export default function AboutPage() {
           </p>
           <SocialLinks />
         </div>
-        <div className="rounded-3xl border border-slate-800/60 bg-slate-900/30 p-6">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-slate-800/70">
+        <div className="rounded-3xl border border-slate-700 bg-slate-900/30 p-6">
+          <div className="relative aspect-[6/4]  overflow-hidden rounded-2xl border border-slate-800/70">
             <Image
-              src="/images/pro_picture.jpg"
+              src="/images/hackathon_pic.jpg"
               alt="Bryan working from a coffeeshop"
               fill
               className="object-cover"
@@ -104,7 +104,7 @@ export default function AboutPage() {
           {values.map((value) => (
             <div
               key={value.label}
-              className="rounded-2xl border border-slate-800/60 bg-slate-950/40 p-6"
+              className="rounded-2xl border border-slate-700 bg-blue_navy p-6"
             >
               <p className="text-sm uppercase tracking-[0.3em] text-accent-2">
                 {value.label}

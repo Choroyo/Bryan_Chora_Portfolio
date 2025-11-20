@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -22,13 +23,20 @@ const Navbar = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="sticky top-0 z-30 w-full backdrop-blur bg-slate-950/80 border-b border-slate-800/50">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10 lg:px-12">
+    <header className="sticky top-0 z-30 w-full backdrop-blur bg-blue_navy border border-slate-700">
+      <div className="flex w-full items-center justify-between px-4 py-.5 md:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-wide text-white transition hover:text-accent-2"
+          className="flex items-center gap-3 text-lg font-semibold tracking-wide text-white transition hover:text-accent-2"
         >
-          Bryan Chora
+          <Image
+            src="/images/logo.png"
+            alt="Bryan Chora logo"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
+          <span>Bryan Chora</span> 
         </Link>
         <nav className="hidden gap-1 rounded-full border border-slate-800 bg-slate-900/50 p-1 text-sm text-slate-200 md:flex">
           {NAV_LINKS.map((link) => (
@@ -37,7 +45,7 @@ const Navbar = () => {
               href={link.href}
               className={`rounded-full px-4 py-2 transition ${
                 isActive(link.href)
-                  ? "bg-accent text-slate-900 shadow-[0_8px_30px_rgba(196,154,44,0.35)]"
+                  ? "bg-accent border border-blue_navy text-slate-900 "
                   : "hover:bg-slate-800 hover:text-white"
               }`}
             >

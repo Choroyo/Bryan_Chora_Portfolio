@@ -18,7 +18,7 @@ const links = [
   },
   {
     label: "Resume",
-    href: "https://drive.google.com/file/d/1vs_I7zWrNRrxrP00sxtL5dQcMzOJFXe-/view?usp=sharing",
+    href: "/resume.pdf",
     icon: HiOutlineDocumentArrowDown,
   },
   {
@@ -41,7 +41,7 @@ const SocialLinks = () => (
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-full border border-slate-800/70 bg-slate-900/40 px-4 py-2 text-sm text-slate-200 transition hover:border-accent hover:text-white"
+          className="flex items-center gap-2 rounded-full border border-slate-700 bg-blue_navy px-4 py-2 text-sm text-slate-200 transition hover:border-accent hover:text-white"
         >
           <Icon className="text-lg" />
           {label}

@@ -3,12 +3,12 @@ import HeroSection from "@/components/HeroSection";
 import ProjectCard from "@/components/ProjectCard";
 import ContactForm from "@/components/ContactForm";
 import { projects } from "@/data/projects";
-
+import { AnimatedStats } from "@/components/AnimatedStats"; 
 const stats = [
-  { label: "Hackathons", value: "10+" },
-  { label: "Projects Shipped", value: "20+" },
-  { label: "Coffee Beans Tasted", value: "35" },
-  { label: "Miles Logged (5K)", value: "220" },
+  { label: "Hackathons", value: "7+" },
+  { label: "Projects Completed", value: "12+" },
+  { label: "Coffee Beans Tasted", value: "24+" },
+  { label: "Miles Logged Running", value: "220+" },
 ];
 
 export default function Home() {
@@ -24,9 +24,9 @@ export default function Home() {
             </p>
             <h2 className="text-3xl font-semibold text-white">Projects</h2>
             <p className="mt-2 max-w-2xl text-slate-300">
-              A sample of the experiments, hackathon builds, and production apps
-              that taught me how to design resilient systems and joyful
-              interfaces.
+             A rotating set of prototypes, hackathon winners, and shipped
+             products that pushed my thinking on how to blend resilient
+             architecture with delightful user journeys.
             </p>
           </div>
           <Link
@@ -81,15 +81,11 @@ export default function Home() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {stats.map((stat) => (
-            <div
+            <AnimatedStats
               key={stat.label}
-              className="rounded-2xl border border-slate-800/50 bg-slate-950/40 p-6 text-center"
-            >
-              <p className="text-4xl font-bold text-white">{stat.value}</p>
-              <p className="mt-2 text-sm uppercase tracking-[0.3em] text-slate-400">
-                {stat.label}
-              </p>
-            </div>
+              value={stat.value}
+              label={stat.label}
+            />
           ))}
         </div>
       </section>
@@ -107,7 +103,7 @@ export default function Home() {
           </h2>
           <p className="text-slate-300">
             Whether you&apos;re hiring, planning your next hackathon team, or
-            just want to nerd out about ML, coffee, or running—my inbox is
+            just want to nerd out about computer science, coffee, or running my inbox is
             always open. I reply within 24 hours.
           </p>
           <div className="rounded-2xl border border-slate-800/60 bg-slate-900/30 p-6">

@@ -19,7 +19,7 @@ export const projects: Project[] = [
     description:
       "RowdyRunner is an arcade-style endless runner that I built to experiment with procedural obstacle generation and custom physics. The game adapts to the player’s skill level by tweaking spawn frequency and surface friction in real-time. I also wrote a simple animation system that bundles sprite sheets and hitboxes into a single config file, so creating new enemies is as easy as dropping an image.",
     image: "/images/RowdyRunner.png",
-    technologies: ["Python", "Pygame", "Aseprite"],
+    technologies: ["Python", "Pygame", "PhotoShop"],
     highlights: [
       "Procedural difficulty scaling keeps play sessions engaging.",
       "Tight keyboard controls and custom physics loop for smooth gameplay.",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description:
       "Door.AI combines OpenCV powered facial detection with a TensorFlow Lite classifier running on an embedded device. The system unlocks a smart deadbolt when a trusted face is detected and sends real-time alerts with a snapshot for every failed attempt. I focused on model quantization and the secure handoff between the ML layer and the hardware relay.",
     image: "/images/Door_pic.png",
-    technologies: ["TensorFlow", "OpenCV", "Raspberry Pi", "Flask"],
+    technologies: ["Python", "TensorFlow", "MediaPipe", "OpenCV", "Raspberry Pi", "Flask"],
     highlights: [
       "Supports on-device enrollment with multi-factor verification.",
       "Streaming dashboard built with Flask + WebSockets for monitoring events.",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     description:
       "ASL Dinosaurs began as a Devpost hackathon project focused on bridging the accessibility gap for video calls. We trained a lightweight CNN on custom hand-shape data and wrapped it with a WebRTC interface that draws the detected sign overlaid on the live feed. My work included the data labeling pipeline and the interactive UI built with React and Canvas.",
     image: "/images/AI_Picture.png",
-    technologies: ["Python", "TensorFlow", "React", "WebRTC"],
+    technologies: ["Python", "TensorFlow", "MediaPipe", "OpenCV" ],
     highlights: [
       "Custom data augmentation pipeline increased accuracy by 14%.",
       "Live feedback loop so users can adjust hand placement in real time.",

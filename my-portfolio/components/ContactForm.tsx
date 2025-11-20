@@ -51,7 +51,7 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      className="space-y-4 rounded-3xl border border-slate-800/60 bg-slate-900/40 p-8 shadow-[0_15px_80px_rgba(15,23,42,0.7)] backdrop-blur"
+      className="space-y-4 rounded-3xl border border-slate-700 bg-blue_navy p-8 shadow-[0_20px_120px_rgba(99,102,241,0.2)] backdrop-blur"
     >
       <div>
         <label
@@ -112,14 +112,32 @@ const ContactForm = () => {
           placeholder="Tell me about your next opportunity..."
         />
       </div>
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 font-semibold text-slate-900 transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
-      >
-        {status === "loading" ? "Sending..." : "Send Message"}
-        <RiSendPlane2Fill />
-      </button>
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          animate={{
+            boxShadow: [
+              "0 0 0 rgba(0,0,0,0)",
+              "0 0 20px rgba(241,90,34,.20)",
+              "0 0 40px rgba(241,90,34,.45)",
+              "0 0 60px rgba(241,90,34, .80)",
+              "0 0 40px rgba(241,90,34,.45)",
+              "0 0 20px rgba(241,90,34,.20)",
+              "0 0 0 rgba(0,0,0,0)",
+            ],
+          }}
+          transition={{ 
+            repeat: Infinity,
+            duration: 3,
+            ease: "easeOut",
+            repeatType: "mirror"}}
+          whileHover={{ y: -2, scale: 1.03 }}
+          type="submit"
+          disabled={status === "loading"}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 font-semibold text-slate-900 transition  disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {status === "loading" ? "Sending..." : "Send Message"}
+          <RiSendPlane2Fill />
+        </motion.button>
       {status === "success" && (
         <p className="text-sm text-emerald-400">Message sent! Talk soon.</p>
       )}

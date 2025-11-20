@@ -36,7 +36,7 @@ export default function RootLayout({
         <div className="relative min-h-screen bg-slate-950 text-slate-100">
           <div className="pointer-events-none absolute inset-0" />
           <Navbar />
-          <main className="relative z-10 px-6 pb-24 pt-28 md:px-12 lg:px-24">
+          <main className="relative z-10 px-6 pb-24 pt-10 md:px-12 lg:px-24">
             {children}
           </main>
           <Footer />
