@@ -28,27 +28,34 @@ const links = [
   },
 ];
 
-const SocialLinks = () => (
-  <motion.ul
-    initial={{ opacity: 0, y: 16 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.6 }}
-    className="flex flex-wrap gap-3"
-  >
-    {links.map(({ label, href, icon: Icon }) => (
-      <li key={label}>
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 rounded-full border border-slate-700 bg-blue_navy px-4 py-2 text-sm text-slate-200 transition hover:border-accent hover:text-white"
-        >
-          <Icon className="text-lg" />
-          {label}
-        </a>
-      </li>
-    ))}
-  </motion.ul>
-);
+type SocialLinksProps = {
+  hide?: string;
+};
+
+const SocialLinks = ({ hide } : SocialLinksProps) => {
+  const visibleLinks = hide ? links.filter(link => link.label !== hide) : links;
+  return (
+    <motion.ul
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6 }}
+      className="flex flex-wrap gap-3"
+    >
+      {visibleLinks.map(({ label, href, icon: Icon }) => (
+        <li key={label}>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full border border-slate-700 bg-blue_navy px-4 py-2 text-sm text-slate-200 transition hover:border-accent hover:text-white"
+          >
+            <Icon className="text-lg" />
+            {label}
+          </a>
+        </li>
+      ))}
+    </motion.ul>
+  );
+};
 
 export default SocialLinks;

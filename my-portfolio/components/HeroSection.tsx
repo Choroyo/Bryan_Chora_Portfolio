@@ -80,21 +80,16 @@ const HeroSection = () => {
           className="flex flex-wrap gap-4"
         >
           <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-slate-900 transition hover:text-white hover:opacity-80"
-          >
-            View Projects
-          </a>
-          <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border bg-blue_navy border-slate-700 px-6 py-3 font-medium text-slate-200 transition hover:border-accent hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full text-slate-900 bg-accent border border-blue_navy px-6 py-3 font-medium transition hover:opacity-80 hover:text-white"
           >
             Download Resume
           </a>
         </motion.div>
-        <SocialLinks />
+        <SocialLinks
+        hide="Resume"/>
       </div>
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 24 }}
@@ -139,7 +134,7 @@ const HeroSection = () => {
             duration: 3,
             ease: "easeOut",
             repeatType: "mirror"}}
-          className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-accent px-4 py-2 font-semibold text-slate-900 hover:transition hover:bg-accent-2"
+          className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-accent px-4 py-2 font-semibold text-slate-900 hover:transition hover:text-white"
         >
           Contact Me
         </motion.a>

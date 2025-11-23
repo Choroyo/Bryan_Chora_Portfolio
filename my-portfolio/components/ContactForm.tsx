@@ -133,7 +133,7 @@ const ContactForm = () => {
           whileHover={{ y: -2, scale: 1.03 }}
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 font-semibold text-slate-900 transition  disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-accent to-accent-2 px-6 py-3 font-semibold text-slate-900 transition  disabled:cursor-not-allowed hover:text-white"
         >
           {status === "loading" ? "Sending..." : "Send Message"}
           <RiSendPlane2Fill />
